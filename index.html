@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kosong</title>
+    <title>Website Animasi</title>
     <style>
         body {
             margin: 0;
@@ -11,9 +11,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(270deg, #ff7e5f, #feb47b);
+            overflow: hidden;
+            background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f00ff);
             background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            animation: gradientBG 8s ease infinite;
+            position: relative;
         }
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -23,10 +25,45 @@
         h1 {
             color: white;
             font-family: Arial, sans-serif;
+            font-size: 2rem;
+            position: absolute;
+            top: 20%;
+            animation: floatText 3s ease-in-out infinite;
+        }
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .cloud {
+            position: absolute;
+            top: 10%;
+            width: 100px;
+            animation: moveClouds 15s linear infinite;
+        }
+        .cloud:nth-child(2) { top: 30%; left: 20%; animation-duration: 18s; }
+        .cloud:nth-child(3) { top: 50%; left: 50%; animation-duration: 20s; }
+        
+        @keyframes moveClouds {
+            0% { transform: translateX(-150px); }
+            100% { transform: translateX(100vw); }
+        }
+        .computer {
+            position: absolute;
+            bottom: 10%;
+            width: 150px;
+            animation: floatComputer 3s ease-in-out infinite;
+        }
+        @keyframes floatComputer {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
-    <h1>Halo! Ini Halaman Kosong</h1>
+    <h1>Halo! Selamat Datang</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Farm-Fresh_computer.png" class="computer" alt="Komputer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cloud_icon.svg" class="cloud" style="left: 10%;" alt="Awan">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cloud_icon.svg" class="cloud" style="left: 40%;" alt="Awan">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cloud_icon.svg" class="cloud" style="left: 70%;" alt="Awan">
 </body>
 </html>
